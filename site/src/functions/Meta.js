@@ -66,7 +66,7 @@ export default class Meta extends Component {
                 <meta name="og:title" content={this?.props?.title ?? this?.defaults?.title} />
                 <meta name="og:type" content="Bot Website" />
                 <meta name="og:url" content={window?.location?.origin} />
-                <meta name="og:image" content={global?.Data?.Icon} />
+                <meta name="og:image" content={`${window?.location?.origin}/icons/elara.png`} />
                 <meta name="og:site_name" content="SUPERCHIEFYT#0001" />
                 <meta name="og:description" content={this?.props?.description ?? this?.defaults?.description} />
                 <meta name="application-name" content="Elara's Website" />
@@ -79,7 +79,7 @@ export default class Meta extends Component {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
                 {/* Website icon. */}
-                <link rel="icon" href={global?.Data?.Icon} />
+                <link rel="icon" href={`${window?.location?.origin}/icons/elara.png`} />
             </Helmet>
         )
     }
