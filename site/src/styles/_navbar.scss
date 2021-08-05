@@ -1,0 +1,174 @@
+// Import variables.
+@import 'root';
+
+// Top content overflow hider.
+#background {
+    height: 25px;
+    position: fixed;
+    right: 0;
+    background-color: black(1);
+    transform: scale(1);
+    z-index: 2;
+
+    // User visible navbar.
+    #navbar {
+        transition-duration: 0.5s;
+        color: $font-color;
+        height: 50px;
+        background-color: black(2);
+        width: calc(100vw - 20px);
+        border-radius: 50px 5px 5px 50px;
+        filter: drop-shadow(0 2px 5px black(0));
+        position: relative;
+        z-index: 1;
+        display: flex;
+        margin: 5px;
+
+        // Elara icon.
+        #icon {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            border-radius: 50%;
+            cursor: pointer;
+
+            // Source image.
+            img {
+                border-radius: 50%;
+                width: 40px;
+                padding: 5px;
+            }
+        }
+
+        // Tabs.
+        div {
+            text-align: center;
+            margin: auto 15px;
+            font-size: 17px;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+
+            // Hover animation.
+            &:hover {
+                transition-duration: 0.4s;
+                background: black(3);
+            }
+
+            // Text styles.
+            h4 {
+                display: flex;
+                margin-block: 0;
+                margin-inline: 0;
+                font-weight: normal;
+                text-shadow: 1px 1px black(0);
+
+                // Bot tag styles.
+                p {
+                    text-shadow: 1px 1px black(0);
+                    display: contents;
+                    margin-block: 0;
+                    margin-inline: 0;
+                    font-weight: normal;
+                    font-size: 13px;
+                    color: #c0c0c0;
+                    font-style: italic;
+                }
+            }
+        }
+
+        // Bot name formatting.
+        .botname {
+            margin: auto 15px auto 5px;
+        }
+
+        // Linked text formatting.
+        .link {
+            display: flex;
+
+            // Allow elements to stay on the same line.
+            div {
+                display: contents;
+            }
+
+            // External icon.
+            svg {
+                fill: $font-color;
+                display: inline;
+                width: 13px;
+            }
+        }
+    }
+}
+
+// Mobile view (Overflowed navbar).
+@media (max-width: 1100px) {
+    // Inherit background for nesting navbar styles.
+    #background {
+        // Mobile navbar styles.
+        #navbar {
+            display: block !important;
+            width: calc(100vw - 10px);
+
+            // First child divs styles.
+            > div {
+                margin: 0 5px 0 20px !important;
+
+                // Skip first child and link class.
+                &:not(:nth-child(1)),
+                .link {
+                    display: none;
+                    pointer-events: none;
+                }
+
+                // First child styles.
+                &:nth-child(1) {
+                    margin: 0px !important;
+
+                    // Defining text.
+                    &:after {
+                        content: 'Navigation';
+                        margin: auto 15px;
+                    }
+                }
+            }
+
+            // Bot name styles.
+            .botname {
+                margin: 0 5px !important;
+
+                // Defining text.
+                &:after {
+                    content: '(Home)';
+                    margin: auto 7px;
+                }
+            }
+
+            // Image div.
+            #icon {
+                border-radius: 50px 0 0 50px !important;
+            }
+        }
+
+        // Opened nav styles.
+        .open {
+            height: max-content !important;
+            border-radius: 25px 0 0 25px !important;
+            padding: 0 0 5px 0;
+
+            // Tab styles.
+            div {
+                pointer-events: auto !important;
+                &:not(:nth-child(1)),
+                .link {
+                    display: flex !important;
+
+                    div {
+                        padding: 0 !important;
+                        margin: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+}

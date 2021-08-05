@@ -1,0 +1,146 @@
+// Import variables.
+@import 'root';
+
+// Notification mount.
+#notifications {
+    position: fixed;
+    z-index: 1;
+    opacity: 0.9;
+    right: 5px;
+
+    // Notification "cell".
+    .notification {
+        display: block;
+        margin: 5px 0;
+        border-radius: 5px;
+        animation: fadeIn 0.5s 1;
+        width: 260px;
+
+        // Padding for first element.
+        &:nth-child(1) {
+            margin-top: 60px;
+        }
+
+        // Notification data.
+        #information {
+            border-radius: 5px;
+            padding: 5px;
+            width: 250px;
+            color: $link-stale;
+            cursor: default;
+
+            // Notification close.
+            p {
+                text-shadow: 1px 1px black(0);
+                position: absolute;
+                right: 5px;
+                margin-block: 0;
+                margin-inline: 0;
+                padding: 5px;
+                border-radius: 5px;
+                cursor: pointer;
+
+                &:hover {
+                    background: black(3);
+                }
+            }
+
+            // Notification links.
+            a {
+                text-shadow: 1px 1px black(0);
+                color: #FF0092;
+                text-decoration: none;
+                display: inline-flex;
+
+                &:hover {
+                    color: $master;
+
+                    svg {
+                        fill: $master;
+                    }
+                }
+
+                svg {
+                    width: 15px;
+                    margin: 5px 5px 0 -2px;
+                    fill: #FF0092;
+                }
+            }
+
+            // Notification title.
+            h1 {
+                text-shadow: 1px 1px black(0);
+                margin-block: 0;
+                margin-inline: 0;
+                font-weight: normal;
+                background-color: black(3);
+                padding: 5px;
+                border-radius: 5px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                max-width: 215px;
+            }
+
+            // Notification data.
+            h2 {
+                text-shadow: 1px 1px black(0);
+                margin-block: 0;
+                margin-inline: 0;
+                font-weight: normal;
+                padding: 5px 0;
+                font-size: 20px;
+            }
+        }
+    }
+
+    // Notification style: info.
+    .info {
+        background: #2e6fd6;
+    }
+
+    // Notification style: error.
+    .error {
+        background: #cc1400;
+    }
+
+    // Notification style: warn.
+    .warn {
+        background: #faa61a;
+    }
+
+    // Notification style: special.
+    .special {
+        background: $font-color;
+    }
+
+    // Deleted notification animation.
+    .deleted {
+        animation: fadeOut 0.5s 1;
+    }
+}
+
+// Notification fade in animation.
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+}
+
+// Notification fade out animation.
+@keyframes fadeOut {
+    0% {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
