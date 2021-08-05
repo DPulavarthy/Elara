@@ -3,7 +3,6 @@ import { Component } from 'react'
 import { Helmet } from 'react-helmet'
 
 // Import webpage elements.
-import Meta from '../functions/Meta.js'
 import Navbar from '../functions/Navbar.js'
 import Preloader from '../functions/Preloader.js'
 
