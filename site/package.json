@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A multiple purpose bot with Fun, Information, Moderation commands, And logging features.",
   "dependencies": {
+    "gatsby-plugin-react-helmet": "^4.11.0",
     "node-fetch": "^2.6.1",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",

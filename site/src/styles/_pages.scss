@@ -1408,7 +1408,7 @@ body {
                             text-align: center;
                             color: $link-stale;
                         }
-                        
+
                         &:hover {
                             p {
                                 color: $link-hover;
@@ -1446,7 +1446,7 @@ body {
 
     tr:not(:last-child) {
         text-align: center;
-        
+
         td {
             display: inline-block;
 
@@ -1618,7 +1618,7 @@ body {
                     }
 
                     #definer h1 {
-                        margin: 0 6px !important;
+                        margin: 0 10px !important;
                     }
                 }
             }
