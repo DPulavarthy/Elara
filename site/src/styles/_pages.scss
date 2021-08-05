@@ -1603,8 +1603,12 @@ body {
                         h1,
                         h2,
                         h3,
-                        h3 {
+                        h4 {
                             font-size: 12px;
+                        }
+
+                        h3 {
+                            margin-left: 0 !important;
                         }
                     }
 
@@ -1667,6 +1671,7 @@ body {
             #svg img {
                 height: max-content;
                 margin-left: 0 !important;
+                width: 100% !important;
             }
         }
     }
