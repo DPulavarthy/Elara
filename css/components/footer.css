@@ -1,0 +1,67 @@
+[footer] [content] h1 {
+    color: var(--primary);
+    text-shadow: 1px 1px var(--shadow);
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+}
+
+[footer] [content] svg {
+    fill: var(--secondary);
+    width: 15px;
+    height: 15px;
+    filter: drop-shadow(1px 1px 0.5px var(--shadow));
+}
+
+[footer] [content] p {
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+[footer] [content] a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+[footer] [content] img {
+    content: url(../../assets/icons/heart.png);
+    width: 18px;
+    height: 18px;
+    margin: 0 0 -2px 5px;
+}
+
+[footer] {
+    display: flex;
+    width: 100vw;
+    overflow: hidden;
+}
+
+[footer]:after {
+    content: "";
+    background: var(--secondary);
+    width: 50%;
+    height: inherit;
+    transform: skew(-30deg);
+    transform-origin: bottom;
+}
+
+[footer]:before {
+    content: "";
+    background: var(--secondary);
+    width: 50%;
+    height: inherit;
+    transform: skew(30deg);
+    transform-origin: bottom;
+}
+
+
+@media (max-width: 1100px) {
+    [footer]:before, [footer]:after {
+        display: none;
+    }
+
+    [footer] [content] h1 {
+        font-size: 30px;
+    }
+}

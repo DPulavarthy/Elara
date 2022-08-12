@@ -1,0 +1,176 @@
+[navbar] main {
+    background: var(--elements);
+    border-radius: 25px 3px 3px 25px;
+    height: 50px;
+    width: calc(100% - 20px);
+    margin: 10px;
+    filter: drop-shadow(0 5px 2px var(--shadow));
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition-duration: 200ms;
+}
+
+[navbar] input {
+    opacity: 0;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    z-index: 201;
+    pointer-events: none;
+}
+
+[navbar] {
+    position: fixed;
+    top: 0;
+    z-index: 200;
+    width: 100%;
+    height: 30px;
+    background: var(--background);
+    filter: drop-shadow(0 5px 2px var(--background));
+}
+
+[navbar] main img {
+    content: url(../../assets/elara.png);
+    width: 40px;
+    height: 40px;
+    margin: 5px 10px 5px 5px;
+}
+
+[navbar] main a {
+    display: flex;
+    align-items: center;
+    color: var(--secondary);
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 20px;
+    padding: 5px 20px;
+    border-radius: 3px;
+    transition-duration: 200ms;
+    cursor: pointer;
+    text-shadow: 1px 1px var(--shadow);
+    text-decoration: none;
+    white-space: nowrap;
+    user-select: none;
+}
+
+[navbar] main a:first-child {
+    padding: 0 10px 0 0;
+    border-radius: 25px 3px 3px 25px;
+}
+
+[navbar] main a:hover {
+    background: var(--hover);
+}
+
+[navbar] main i {
+    opacity: 0.7;
+    font-weight: normal;
+    margin-top: 4px;
+    font-size: 13px;
+    color: var(--color);
+}
+
+[navbar] svg {
+    fill: var(--secondary);
+    width: 15px;
+    height: 15px;
+    filter: drop-shadow(1px 1px 0.5px var(--shadow));
+}
+
+@media (max-width: 1300px) {
+    [navbar] main a {
+        margin-right: 5px;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 1100px) {
+    [navbar] main {
+        display: block;
+        overflow: auto;
+    }
+
+    [navbar] main::-webkit-scrollbar {
+        display: none;
+    }
+
+    [navbar] input {
+        pointer-events: auto;
+    }
+
+    [navbar] main a:first-child,
+    [navbar] main a:first-child i {
+        margin: 0;
+        color: transparent;
+        /* width: 0; */
+        text-shadow: none;
+    }
+
+    [navbar] main a:first-child:after {
+        content: "Menu";
+        color: var(--secondary);
+        margin-left: -80px;
+    }
+
+    [navbar] input:checked + main {
+        height: calc(100vh - 20px);
+        border-radius: 25px 3px 3px 3px;
+    }
+
+    [navbar] main a {
+        margin: 0 10px 5px 10px;
+        padding: 10px 10px;
+    }
+
+    [navbar] main a:nth-child(2) {
+        margin-top: 10px;
+    }
+
+    [navbar] label {
+        margin: 10px auto 20px 20px;
+    }
+}
+
+label {
+    display: flex;
+    white-space: nowrap;
+    user-select: none;
+    width: min-content;
+    margin: 0 20px 0 auto;
+}
+
+label span {
+    cursor: pointer;
+    width: 35px;
+    height: 21px;
+    background-color: var(--hover);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 3px;
+}
+
+label span:before {
+    content: " ";
+    height: 15px;
+    width: 15px;
+    display: block;
+    margin: 3px 4px;
+    left: 3px;
+    bottom: 3px;
+    background: var(--background);
+    transition: 0.2s;
+    border-radius: 3px;
+}
+
+label input {
+    display: none;
+}
+
+input:checked + span {
+    background: var(--secondary);
+}
+
+input:checked + span:before {
+    transform: translateX(12px);
+}

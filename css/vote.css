@@ -1,0 +1,116 @@
+[vote] img {
+    content: url(../assets/vote.svg);
+    width: 70%;
+    overflow: visible;
+}
+[vote] [icon] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+
+[master] {
+    margin-top: 70px;
+}
+
+[master] > h1 {
+    font-size: 9vw;
+    font-weight: 500;
+    margin: 0 20px;
+    display: flex;
+}
+
+[master] > h1 > p {
+    margin: 0;
+    color: var(--primary);
+}
+
+[master] hr {
+    margin: 20px 20px 0 20px;
+    border: none;
+    height: 2px;
+    background: var(--secondary);
+    border-radius: 2px;
+}
+
+@media (max-width: 1100px) {
+    [vote],
+    [vote] > div:not([icon]) {
+        display: block !important;
+    }
+
+    [vote] h1 {
+        font-size: 10vw !important;
+    }
+
+    [vote] p {
+        font-size: 5.5vw !important;
+    }
+
+    [vote] svg {
+        width: 5vw !important;
+        height: 5vw !important;
+    }
+}
+
+[master] [vote] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: calc(100vh - 9vw - 70px - 50px);
+}
+
+[vote] h1 {
+    font-size: 2.5vw;
+    font-weight: 500;
+    margin: 0;
+    color: var(--primary);
+    text-align: center;
+}
+
+[vote] > div:not([icon]) {
+    display: flex;
+    align-items: center;
+}
+
+[vote] p {
+    font-size: 1.2vw;
+    font-weight: 300;
+    margin: 0;
+    color: var(--secondary);
+    text-align: center;
+    width: 70%;
+    margin: 10px auto;
+}
+
+[vote] a {
+    display: flex;
+    justify-content: center;
+}
+
+[vote] a img:hover {
+    background: var(--hover);
+    transform: scale(1.1);
+}
+
+[vote] a img {
+    content: url(../assets/icons/topgg.png);
+    width: 50px;
+    margin: 10px 0;
+    background: var(--elements);
+    padding: 10px;
+    border-radius: 5px;
+    transition-duration: 200ms;
+    filter: drop-shadow(2px 2px 2px var(--shadow));
+}
+
+[vote] svg {
+    fill: var(--color);
+    width: 1vw;
+    height: 1vw;
+    margin: 5px -15px;
+    background: var(--background);
+    border-radius: 0 0 0 50%;
+    transition-duration: 200ms;
+    z-index: 4;
+}

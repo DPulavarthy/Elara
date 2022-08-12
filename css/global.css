@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+:root {
+    --font: 15px "Ubuntu", system-ui;
+    --font-mono: 15px "Ubuntu Mono", monospace;
+    --primary: #790c9e;
+    --secondary: #b28dff;
+    --highlight: #ff0092;
+    --green: #43b581;
+    --red: #f04747;
+    --blue: #00a9ff;
+    --yellow: #faa61a;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #111111;
+        --color: #eeeeee;
+        --elements: #222222;
+        --hover: #ffffff1a;
+        --shadow: #000000;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background: #eeeeee;
+        --color: #111111;
+        --elements: #dddddd;
+        --hover: #0000001a;
+        --shadow: #808080;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font: var(--font);
+    color: var(--color);
+    background: var(--background);
+    transition-duration: 200ms;
+    scroll-behavior: smooth;
+    overflow-x: hidden !important;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+}

@@ -1,0 +1,212 @@
+/* Back to Top styles. */
+[top] {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition-duration: 200ms;
+    pointer-events: none;
+    z-index: 1;
+}
+
+[top] img {
+    margin: 10px;
+    padding: 10px;
+    content: url(../../assets/icons/top.png);
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    background: var(--elements);
+    cursor: pointer;
+}
+
+[top]:hover img {
+    background: var(--hover);
+}
+
+/* Notification Styles. */
+[notifications] svg {
+    fill: var(--highlight);
+    width: 15px;
+    height: 15px;
+    filter: drop-shadow(1px 1px 0.5px var(--shadow));
+    margin-right: 5px;
+}
+
+[notifications] a {
+    color: var(--highlight);
+    text-decoration: none;
+}
+
+[notifications] h1 {
+    display: flex;
+    margin: 0 0 5px 0;
+    font-size: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-flex;
+    white-space: nowrap;
+    width: 220px;
+}
+
+[notifications] h1 p {
+    margin: 0;
+    animation: wave 3s infinite ease;
+    margin-left: 5px;
+}
+
+[notifications] > div > p {
+    margin: 10px 0 5px 0;
+    font-size: 17px;
+}
+
+@keyframes wave {
+    20% {
+        transform: rotate(20deg);
+    }
+
+    40% {
+        transform: rotate(-10deg);
+    }
+
+    60% {
+        transform: rotate(0deg);
+    }
+}
+
+[notifications] {
+    position: fixed;
+    z-index: 100;
+    right: 10px;
+    top: 70px;
+    transition-duration: 200ms;
+}
+
+[notifications] > div {
+    padding: 10px;
+    border-radius: 3px;
+    text-shadow: 1px 1px var(--background);
+    width: 250px;
+    max-width: 320px;
+    background: var(--green);
+    animation: show 700ms ease forwards;
+    margin-bottom: 10px;
+    transition-duration: 200ms;
+}
+
+[notifications] hr {
+    border: none;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--background);
+}
+
+[notifications] > div[welcome] {
+    background: var(--secondary);
+}
+
+[notifications] [remove] {
+    cursor: pointer;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    padding: 5px 10px;
+    background: var(--background);
+    border-radius: 3px;
+    z-index: 1;
+    user-select: none;
+}
+
+[notifications] [remove]:hover {
+    background: var(--elements);
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+[notifications] > div.hide {
+    animation: hide 400ms ease forwards;
+}
+
+@keyframes hide {
+    0% {
+        max-height: 500px;
+        transition: max-height 100ms ease-in;
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        max-height: 0;
+        transition: max-height 100ms ease-out;
+        overflow: hidden;
+        display: none;
+    }
+}
+
+/* Preloader styles. */
+
+[preloader] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background);
+    z-index: 300;
+}
+
+[preloader].hide {
+    animation: fade 400ms ease forwards;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+[preloader] h1 {
+    font-size: 9vw;
+    font-weight: 500;
+    /* margin: 70px 20px; */
+    /* opacity: 0; */
+    position: absolute;
+    margin: 0;
+    animation: load 1s forwards ease;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes load {
+    0% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        top: 70px;
+        left: 20px;
+        transform: none;
+    }
+}

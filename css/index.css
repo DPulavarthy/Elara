@@ -1,0 +1,450 @@
+[master] {
+    margin-top: 70px;
+}
+
+[master] > h1 {
+    font-size: 9vw;
+    font-weight: 500;
+    margin: 0 20px;
+    display: flex;
+}
+
+[master] > h1 > p {
+    margin: 0;
+    color: var(--primary);
+}
+
+[master] hr {
+    margin: 20px 20px 0 20px;
+    border: none;
+    height: 2px;
+    background: var(--secondary);
+    border-radius: 2px;
+}
+
+[master] [header],
+[master] [logs],
+[master] [config] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* margin: 0 20px 20px 0; */
+    height: calc(100vh - 9vw - 70px - 22px);
+}
+
+[master] [header] div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[master] [header] [icon] {
+    overflow: hidden;
+}
+
+[master] [header] img {
+    content: url(../assets/elara.svg);
+    width: 40%;
+    margin-top: -5%;
+    transform: rotate(-30deg);
+    filter: drop-shadow(10px 10px 2px var(--shadow));
+    animation: rotate 120s infinite;
+    z-index: 1;
+}
+
+@keyframes rotate {
+    20% {
+        transform: rotate(-40deg);
+        filter: drop-shadow(0px 10px 2px var(--shadow));
+    }
+
+    50% {
+        transform: rotate(-10deg);
+        filter: drop-shadow(10px 0px 2px var(--shadow));
+    }
+
+    70% {
+        transform: rotate(-20deg);
+        filter: drop-shadow(5px 5px 2px var(--shadow));
+    }
+}
+
+[header] [icon] div span {
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    border: 1px solid var(--green);
+    position: absolute;
+    animation: radar 20s infinite;
+}
+
+[header] [icon] div span:nth-child(2) {
+    animation-delay: 2s;
+}
+
+[header] [icon] div span:nth-child(3) {
+    animation-delay: 4s;
+}
+
+@keyframes radar {
+    70% {
+        opacity: 0;
+        width: 100vw;
+        height: 100vw;
+    }
+
+    100% {
+        opacity: 0;
+        width: 100vw;
+        height: 100vw;
+    }
+}
+
+[header] [icon] div {
+    position: absolute;
+    margin-right: -2%;
+    width: 100vw;
+    height: calc(100vh - 9vw - 95px);
+    overflow: hidden;
+}
+
+[header] div[who] {
+    display: block;
+}
+
+[header] div[who] h1,
+[logs] h1,
+[config] h1 {
+    font-size: 2.5vw;
+    font-weight: 500;
+    margin: 0;
+    color: var(--primary);
+    text-align: center;
+}
+
+[header] div[who] p,
+[logs] p,
+[config] p {
+    font-size: 1.2vw;
+    font-weight: 300;
+    margin: 0;
+    color: var(--secondary);
+    text-align: center;
+}
+
+[header] div[who] a {
+    text-decoration: none;
+    color: var(--color);
+    display: block;
+    font-size: 1.4vw;
+    margin: 10px 0;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    transition-delay: 50ms;
+    transition-duration: 200ms;
+    font-weight: 500;
+}
+
+[header] div[who] svg {
+    fill: var(--color);
+    width: 1vw;
+    height: 1vw;
+    transition-delay: 50ms;
+    filter: drop-shadow(1px 1px 0.5px var(--shadow));
+}
+
+[header] div[who] a:hover {
+    transform: scale(1.3);
+    color: var(--highlight);
+}
+
+[header] div[who] a:hover svg {
+    fill: var(--highlight);
+}
+
+[header] div[who] a:hover:before {
+    content: "> ";
+    color: var(--highlight);
+    animation: arrowBefore 500ms ease-in-out forwards;
+}
+
+[header] div[who] a:hover:after {
+    content: " <";
+    color: var(--highlight);
+    animation: arrowAfter 500ms ease-in-out forwards;
+}
+
+@keyframes arrowBefore {
+    0% {
+        opacity: 0;
+        margin-right: 20px;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes arrowAfter {
+    0% {
+        opacity: 0;
+        margin-left: 20px;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1100px) {
+    [master] {
+        margin: 70px 0 0 0 !important;
+    }
+
+    [master] [header] {
+        display: block;
+        height: auto;
+    }
+
+    [master] [header] img {
+        height: 400px;
+        width: 40% !important;
+    }
+
+    [header] [icon] div {
+        position: absolute;
+        margin-right: -2%;
+        width: 100vw;
+        height: 380px;
+        overflow: hidden;
+    }
+
+    [header] div[who] {
+        width: 80%;
+    }
+
+    [header] div[who] h1,
+    [logs] h1,
+    [config] h1 {
+        font-size: 10vw !important;
+    }
+
+    [header] div[who] p,
+    [header] div[who] a,
+    [logs] p,
+    [config] p {
+        font-size: 5.5vw !important;
+    }
+
+    [logs] p,
+    [config] p {
+        width: 90% !important;
+    }
+
+    [header] div[who] a:before,
+    [header] div[who] a:after {
+        display: none;
+    }
+
+    [logs] b,
+    [logs] u,
+    [list] div,
+    [config] [info] div,
+    [config] code,
+    [config] u {
+        font-size: 4.5vw !important;
+        display: block !important;
+    }
+
+    [logs] u {
+        margin: 10px 15px 10px 10px !important;
+        text-align: center;
+    }
+
+    [logs] u:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    [header] div[who] svg {
+        width: 4.5vw;
+        height: 4.5vw;
+    }
+
+    [master] [logs],
+    [master] [config] {
+        display: block;
+    }
+
+    [config] code {
+        width: max-content;
+        margin: 0 20px;
+    }
+
+    [config] u {
+        padding: 10px 30px;
+    }
+
+    [config] code:after {
+        width: 3.6vw !important;
+        height: 5vw !important;
+    }
+}
+
+/* Logs. */
+[master] [logs] img {
+    content: url(../assets/embed.svg);
+    /* width: 40%; */
+    margin-top: -5%;
+    z-index: 1;
+}
+
+[master] [logs] {
+    height: auto;
+    grid-template-areas: "info icon";
+    scroll-margin: 100px;
+}
+
+[logs] [icon] {
+    grid-area: icon;
+}
+
+[logs] [info] {
+    grid-area: info;
+    display: flex;
+    align-items: center;
+}
+
+[logs] p {
+    width: 70%;
+    margin: 10px auto;
+}
+
+[logs] [list] {
+    width: 70%;
+    margin: 10px auto;
+}
+
+[logs] [list] div {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background: var(--hover);
+    transition-duration: 200ms;
+}
+
+[logs] [list] div:hover {
+    background: var(--highlight);
+    transform: scale(1.1);
+}
+
+[logs] [list] b {
+    font-weight: 500;
+    font-size: 1.4vw;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: var(--background);
+    transition-duration: 200ms;
+    outline: 2px solid var(--secondary);
+    margin-right: 6px;
+}
+
+[logs] [list] u {
+    pointer-events: auto;
+    text-decoration: none;
+    font-size: 1vw;
+    transition-duration: 200ms;
+    margin: 0 4px;
+    background: var(--secondary);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--background);
+}
+
+@media (max-width: 1600px) {
+    [logs] [list] {
+        width: 90%;
+    }
+    [logs] img {
+        margin: 30px 0 !important;
+    }
+}
+
+/* Config */
+
+[master] [config] img {
+    content: url(../assets/config.svg);
+    /* width: 40%; */
+    z-index: 1;
+}
+
+[master] [config] {
+    height: auto;
+    margin: 100px 0;
+}
+
+[config] p {
+    width: 70%;
+    margin: 10px auto;
+}
+
+[config] [info] div {
+    display: block;
+}
+
+[config] > div:not([icon]) {
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+    width: 80% !important;
+    justify-content: center;
+}
+
+[config] code {
+    padding: 10px;
+    font-size: 1vw;
+    background: var(--elements);
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--highlight);
+    user-select: none;
+}
+
+[config] code:after {
+    content: "";
+    width: 0.7vw;
+    display: inline-block;
+    height: 1vw;
+    margin: 0 4px -7px 10px;
+    border-radius: 3px;
+    box-shadow: 3px -3px 0px 1.5px var(--secondary);
+    outline: 3px solid var(--elements);
+    border: 2px solid var(--secondary);
+}
+
+[config] u {
+    font-size: 1vw;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+[config] [info] div.active code {
+    animation: green 1s ease-in-out forwards;
+}
+
+[config] [info] div.active code:after {
+    animation: copyGreen 1s ease-in-out forwards;
+}
+
+@keyframes green {
+    0% {
+        background: var(--green);
+    }
+}
+
+@keyframes copyGreen {
+    0% {
+        outline: 3px solid var(--green);
+    }
+}
