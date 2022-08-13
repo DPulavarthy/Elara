@@ -288,6 +288,10 @@
         width: 3.6vw !important;
         height: 5vw !important;
     }
+
+    [config] [info] div {
+        margin: 20px 0;
+    }
 }
 
 /* Logs. */
@@ -391,6 +395,7 @@
 
 [config] [info] div {
     display: block;
+    margin: 40px 0;
 }
 
 [config] > div:not([icon]) {
